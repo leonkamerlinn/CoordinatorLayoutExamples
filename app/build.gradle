@@ -1,0 +1,147 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "com.leon.coordinatorlayoutexamples"
+        minSdkVersion 17
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    //ANDROID SUPPORT LIBRARY
+    implementation "com.android.support.constraint:constraint-layout:$constraint_layout"
+    //noinspection GradleCompatible
+    implementation "com.android.support:appcompat-v7:$support_version"
+    implementation "com.android.support:support-compat:$support_version"
+    implementation "com.android.support:support-core-utils:$support_version"
+    implementation "com.android.support:support-core-ui:$support_version"
+    implementation "com.android.support:support-media-compat:$support_version"
+    implementation "com.android.support:support-fragment:$support_version"
+
+    implementation "com.android.support:cardview-v7:$support_version"
+    implementation "com.android.support:gridlayout-v7:$support_version"
+    implementation "com.android.support:mediarouter-v7:$support_version"
+    implementation "com.android.support:palette-v7:$support_version"
+    //noinspection GradleCompatible
+    implementation "com.android.support:recyclerview-v7:$support_version"
+    implementation "com.android.support:preference-v7:$support_version"
+    implementation "com.android.support:support-vector-drawable:$support_version"
+    implementation "com.android.support:animated-vector-drawable:$support_version"
+    implementation "com.android.support:support-annotations:$support_version"
+    //noinspection GradleCompatible
+    implementation "com.android.support:design:$support_version"
+    implementation "com.android.support:customtabs:$support_version"
+    implementation "com.android.support:percent:$support_version"
+    implementation "com.android.support:exifinterface:$support_version"
+    //implementation "com.android.support:support-v4:$support_version"
+
+
+    implementation "com.facebook.android:facebook-login:$facebook_version"
+    implementation "com.google.code.gson:gson:2.8.2"
+
+
+    //MULTIDEX
+    implementation "com.android.support:multidex:$multidex_version"
+
+    //GOOGLE PLAY SERVICES
+    //noinspection UseOfBundledGooglePlayServices
+    implementation "com.google.android.gms:play-services:$gp_services_version"
+    implementation "com.google.android.gms:play-services-plus:$gp_services_version"
+
+    //RXJAVA
+    implementation "io.reactivex.rxjava2:rxandroid:$rxandroid_version"
+    //implementation "io.reactivex.rxjava2:rxjava:$rxjava_version"
+    implementation "io.reactivex.rxjava2:rxkotlin:$rxkotlin_version"
+
+
+
+
+
+    //RXBINDING
+    //implementation "com.jakewharton.rxbinding2:rxbinding:$rxbinding_version"
+    //implementation "com.jakewharton.rxbinding2:rxbinding-support-v4:$rxbinding_version"
+    //implementation "com.jakewharton.rxbinding2:rxbinding-appcompat-v7:$rxbinding_version"
+    //implementation "com.jakewharton.rxbinding2:rxbinding-design:$rxbinding_version"
+    //implementation "com.jakewharton.rxbinding2:rxbinding-recyclerview-v7:$rxbinding_version"
+    //implementation "com.jakewharton.rxbinding2:rxbinding-leanback-v17:$rxbinding_version"
+
+
+    //DBINSPECTOR
+    //debugCompile "im.dino:dbinspector:3.4.1@aar"
+
+
+
+    //ANKO
+    implementation "org.jetbrains.anko:anko-sdk25:$anko_version"
+    // Support-v4 (Anko Layouts)
+    implementation "org.jetbrains.anko:anko-support-v4:$anko_version"
+    implementation "org.jetbrains.anko:anko-appcompat-v7:$anko_version"
+    implementation "org.jetbrains.anko:anko-commons:$anko_version"
+    // Anko SQLite
+    implementation "org.jetbrains.anko:anko-sqlite:$anko_version"
+
+    //KOTLIN
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+
+    //DAGGER2
+    implementation "com.google.dagger:dagger:$dagger_version"
+    annotationProcessor "com.google.dagger:dagger-compiler:$dagger_version"
+    provided 'javax.annotation:jsr250-api:1.0'
+    implementation 'javax.inject:javax.inject:1'
+
+    //FIREBASE
+    //implementation "com.google.firebase:firebase-core:$firebase_version"           //Analytics
+    //implementation "com.google.firebase:firebase-database:$firebase_version"	    //Realtime Database
+    //implementation "com.google.firebase:firebase-storage:$firebase_version"	    //Storage
+    //implementation "com.google.firebase:firebase-crash:$firebase_version"	    //Crash Reporting
+    //implementation "com.google.firebase:firebase-auth:$firebase_version"	        //Authentication
+    //implementation "com.google.firebase:firebase-messaging:$firebase_version"	//Cloud Messaging
+    //implementation "com.google.firebase:firebase-config:$firebase_version"	    //Remote Config
+    //implementation "com.google.firebase:firebase-invites:$firebase_version"	    //Invites and Dynamic Links
+    //implementation "com.google.firebase:firebase-ads:$firebase_version"	        //AdMob
+    //implementation "com.google.firebase:firebase-appindexing:$firebase_version"  //App Indexing
+    //implementation "com.google.firebase:firebase-perf:$firebase_version"         //Performance Monitoring
+
+    //MY LIBRARY
+    //implementation project(':application_resources')
+
+    //LIFECYCLES, LIVEDATA AND VIEWMODEL
+    //implementation "android.arch.lifecycle:runtime:$android_arch_version"
+    //implementation "android.arch.lifecycle:extensions:$android_arch_version"
+    //implementation "android.arch.lifecycle:reactivestreams:$android_arch_version"
+    //annotationProcessor "android.arch.lifecycle:compiler:$android_arch_version"
+
+    //ROOM
+    //compile "android.arch.persistence.room:runtime:$android_arch_version"
+    //annotationProcessor "android.arch.persistence.room:compiler:$android_arch_version"
+
+    //TESTING ROOM MIGRATIONS
+    //testCompile "android.arch.persistence.room:testing:$android_arch_version"
+
+    //ROOM RXJAVA
+    //implementation "android.arch.persistence.room:rxjava2:$android_arch_version"
+
+
+    testImplementation "junit:junit:4.12"
+    androidTestImplementation("com.android.support.test.espresso:espresso-core:$espresso_core_version", {
+        exclude group: "com.android.support", module: "support-annotations"
+    })
+
+}
