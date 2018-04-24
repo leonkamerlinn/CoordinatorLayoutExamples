@@ -11,20 +11,14 @@ import android.support.v4.view.ViewPager
 import android.support.v7.app.AppCompatActivity
 import android.widget.TextView
 import com.facebook.*
-import com.facebook.login.LoginManager
 import io.reactivex.*
 import io.reactivex.disposables.Disposable
 import io.reactivex.functions.Cancellable
 import org.jetbrains.anko.find
-import com.facebook.login.LoginResult
 import org.jetbrains.anko.AnkoLogger
-import org.json.JSONObject
-import java.util.*
 
 
-
-
-class MainActivity : AppCompatActivity(), AnkoLogger {
+class TabsAndListViewActivity : AppCompatActivity(), AnkoLogger {
 
 
     val tabs by lazy { find<TabLayout>(R.id.tabs) }
@@ -40,7 +34,7 @@ class MainActivity : AppCompatActivity(), AnkoLogger {
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_tabs_and_listview)
         val simplePagerAdapter = SimplePagerAdapter(supportFragmentManager)
         viewPager.adapter = simplePagerAdapter
         tabs.setupWithViewPager(viewPager)
@@ -69,8 +63,7 @@ class MainActivity : AppCompatActivity(), AnkoLogger {
             }
         }
     
-        FacebookAuth()
-     
+
     
         /*recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = RecyclerViewAdapter(this)
@@ -150,38 +143,7 @@ class MainActivity : AppCompatActivity(), AnkoLogger {
     
     
     
-    fun FacebookAuth() {
-  
-    
-        LoginManager.getInstance().registerCallback(callbackManager, object : FacebookCallback<LoginResult> {
-            override fun onError(error: FacebookException?) {
-                println("onError")
-            }
-    
-            override fun onSuccess(result: LoginResult?) {
-                val token = result!!.accessToken.token
-    
-                val request = GraphRequest.newMeRequest(result!!.accessToken, object: GraphRequest.GraphJSONObjectCallback {
-                    override fun onCompleted(jsonObject: JSONObject?, response: GraphResponse?) {
-                        println(jsonObject)
-                    }
-                })
-                
-                
-                val parameters = Bundle()
-                parameters.putString("fields", "id,name,email,first_name,last_name,gender,cover,age_range,link,locale,picture,timezone,updated_time,verified,about,birthday,education,friends,friendlists,photos")
-                request.parameters = parameters
-                request.executeAsync()
-            }
-    
-            override fun onCancel() {
-                println("onCancel")
-            }
-        })
-    
-        LoginManager.getInstance().logInWithReadPermissions(this, Arrays.asList("public_profile", "email", "user_friends", "user_birthday", "user_about_me", "read_custom_friendlists"))
-    
-    }
+
     
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)

@@ -1,5 +1,5 @@
 <resources>
-  <string name="app_name">CoordinatorLayoutExamples</string>
+    <string name="app_name">CoordinatorLayoutExamples</string>
     <string name="lorem">
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 		In mollis est vitae erat laoreet consectetur. Mauris dui mauris,
@@ -17,8 +17,8 @@
 		Aenean ullamcorper dolor non condimentum congue. Aenean mauris nunc, pellentesque at placerat vitae,
 		aliquet quis orci. Curabitur maximus augue ut bibendum sagittis.
 	</string>
-    
-    
+
+
     <string name="facebook_app_id">134300883957443</string>
     <string name="fb_login_protocol_scheme">fb134300883957443</string>
 </resources>

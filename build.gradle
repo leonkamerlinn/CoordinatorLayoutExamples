@@ -1,13 +1,13 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    ext.kotlin_version = '1.1.51'
+    ext.kotlin_version = '1.1.61'
     repositories {
         google()
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.1'
+        classpath 'com.android.tools.build:gradle:3.2.0-alpha12'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 
         // NOTE: Do not place your application dependencies here; they belong
@@ -27,7 +27,7 @@ task clean(type: Delete) {
 }
 
 ext {
-    support_version = '27.0.0'
+    support_version = '27.0.1'
     constraint_layout = '1.0.2'
     anko_version = '0.8.3'
     gp_services_version = '11.6.0'
@@ -43,4 +43,5 @@ ext {
     facebook_version = '[4,5)'
     rxkotlin_version = '2.1.0'
     multidex_version = '1.0.2'
+    gson_version = '2.8.2'
 }
